@@ -1,0 +1,20 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    background: #ddd;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+* {
+    user-select: none;
+}
+
+
+.active {
+    border-bottom: 2px solid #B91600;
+}
