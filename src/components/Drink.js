@@ -1,14 +1,34 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 class Drink extends React.Component {
 
     render() {
+        const drinks = this.props.drinks.map((drink, i)=> {
+            return <li key={i}>{drink.title} {drink.price}€
+            <button onClick={()=>{this.props.addOrder(drink)}}>Į krepšelį</button>
+            </li>
+        });
         return (
-            <div>
-                Drink
+            <div >
+                {drinks}
             </div>
         )
     }
 }
 
-export default Drink;
+const mapStateToProps = (state)=>{
+    return {
+        drinks: state.drinks
+    }
+};
+
+const mapDispatchToProps = (dispatch)=>{
+    return {
+        addOrder(drink) {
+            dispatch({type:'ADD_DRINK', payload:drink})
+        }
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Drink);

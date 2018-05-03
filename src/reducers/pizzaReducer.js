@@ -1,5 +1,4 @@
 import pizzas from '../assets/menu/pizzas';
-import drinks from '../assets/menu/drinks';
 
 const initialState = pizzas;
 

@@ -4,16 +4,28 @@ import AppRoutes from './AppRoutes';
 import './sass/main.scss';
 import 'normalize.css';
 import registerServiceWorker from './registerServiceWorker';
-import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
 import pizzaReducer from './reducers/pizzaReducer';
+import drinksReducer from './reducers/drinksReducer';
+import ordersReducer from "./reducers/orderReducer";
+
+import {createStore, combineReducers, compose} from 'redux';
+
+
+const enhancers = compose(
+    window.REDUX_DEVTOOLS_EXTENSION && window.REDUX_DEVTOOLS_EXTENSION()
+);
 
 const rootReducer = combineReducers({
-    pizza:pizzaReducer
+    pizza:pizzaReducer,
+    drinks:drinksReducer,
+    orders:ordersReducer,
+
 });
 
 
-const store = createStore(rootReducer);
+
+const store = createStore(rootReducer, enhancers);
 
 ReactDOM.render(
     <Provider store={store}>
