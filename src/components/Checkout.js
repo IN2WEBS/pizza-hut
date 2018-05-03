@@ -1,14 +1,14 @@
 import React from 'react';
 
-class Cart extends React.Component {
+class Checkout extends React.Component {
 
     render() {
         return (
             <div>
-                Cart
+                Checkout
             </div>
         )
     }
 }
 
-export default Cart;
+export default Checkout;

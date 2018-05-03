@@ -8,6 +8,8 @@ class Header extends React.Component {
             <header>
                 <NavLink activeClassName='active' to="/" exact>Home</NavLink>
                 <NavLink activeClassName='active' to="/pizza" exact>Pizza</NavLink>
+                <NavLink activeClassName='active' to="/drink" exact>Drink</NavLink>
+                <NavLink activeClassName='active' to="/checkout" exact>Checkout</NavLink>
             </header>
         )
     }
